@@ -1,7 +1,7 @@
 :root {
     --white : #e8e9ed;
     --gray : #57595c;
-    --blue : #0F7DC2;
+    --blue : #2e90cc;
     --green : #00d084;
     --pink : #fd4b77;
 }
@@ -35,6 +35,7 @@ body {
 h1 {
     font-size: 2rem;
     text-align: center;
+    color: var(--gray);
 }
 
 .switches {
@@ -46,9 +47,9 @@ h1 {
     background-color: var(--blue);
 }
 
-.switches li {
-    position: relative
-    counter-increment: switchCounter;
+.switches li{
+    position: relative;
+    counter-increment : switchCounter;
 }
 
 /* select all children of .switches except the last child(last li) */
@@ -84,3 +85,45 @@ h1 {
     transition: all 0.3s;
 }
 
+.switches span:last-child::before,
+.switches span:last-child::after {
+    content: "";
+    position: absolute;
+}
+
+.switches span:last-child::before {
+    left: 1px;
+    top: 1px;
+    width: 24px;
+    height: 24px;
+    background: var(--white);
+    border-radius: 50%;
+    z-index: 1;
+    transition: transform 0.3s;
+}
+
+.switches span:last-child::after {
+    top: 50%;
+    right: 8px;
+    width: 12px;
+    height: 12px;
+    transform: translateY(-50%);
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/uncheck-switcher.svg");
+    background-size: 12px 12px;
+}
+
+.switches [type="checkbox"]:checked + label span:last-child {
+    background: var(--green);
+  }
+  
+  .switches [type="checkbox"]:checked + label span:last-child::before {
+    transform: translateX(24px);
+  }
+  
+  .switches [type="checkbox"]:checked + label span:last-child::after {
+    width: 14px;
+    height: 14px;
+    left: 8px;
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/checkmark-switcher.svg");
+    background-size: 14px 14px;
+  }
