@@ -1,0 +1,47 @@
+:root {
+    --white : #e8e9ed;
+    --gray : #57595c;
+    --blue : #0F7DC2;
+    --green : #00d084;
+    --pink : #fd4b77;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ol {
+    list-style: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+[type="checkbox"] {
+    position: absolute;
+    left: -9999px;
+}
+
+body {
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+    margin: 50px 0;
+    background-color: #fdfbfb;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.switches {
+    max-width: 500px;
+    width: 90%;
+    margin: 50px auto 0;
+    border-radius: 5px;
+    color: var(--white);
+    background-color: var(--blue);
+}
